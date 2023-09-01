@@ -1,0 +1,38 @@
+import unittest
+
+"""
+258. Add Digits
+
+Given an integer num, repeatedly add all its digits until the result has only one digit, and return it.
+
+Example 1:
+
+Input: num = 38
+Output: 2
+Explanation: The process is
+38 --> 3 + 8 --> 11
+11 --> 1 + 1 --> 2
+Since 2 has only one digit, return it.
+
+Example 2:
+
+Input: num = 0
+Output: 0
+"""
+
+
+class Solution:
+    def addDigits(self, num: int) -> int:
+        while num > 9:
+            num = sum(map(int, list(str(num))))
+        return num
+
+
+class AddDigitsTestCase(unittest.TestCase):
+    def setUp(self):
+        self.obj = Solution()
+
+    def test_add_digits(self):
+        res = self.obj.addDigits(38)
+        expected = 2
+        self.assertEqual(res, expected, f'actual - {res}, expected - {expected}')
