@@ -62,7 +62,6 @@ class SplitWordsTestCase(unittest.TestCase):
 
     def test_split_words_1(self):
         res = self.obj.splitWordsBySeparator(["one.two.three","four.five","six"], '.')
-        print(res)
         expected = ["one","two","three","four","five","six"]
         self.assertEqual(res, expected, f'expected - {expected}, actual - {res}')
 
